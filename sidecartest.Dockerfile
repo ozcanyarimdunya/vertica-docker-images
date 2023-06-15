@@ -4,7 +4,8 @@ RUN apk add --no-cache tini
 ENTRYPOINT ["/sbin/tini", "--"]
 
 
-CMD ["sh", "-c", "mkdir -p /tmp/ozcan; echo 'ozcan was here' > /tmp/ozcan/iwashere.txt"]
+RUN mkdir -p /tmp/ozcan
+RUN echo 'ozcan was here' > /tmp/ozcan/iwashere
 
 LABEL maintainer="ozcanyarimdunya"
 LABEL title="Vertica Sidercars"
